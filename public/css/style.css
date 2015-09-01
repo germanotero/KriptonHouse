@@ -1,0 +1,27 @@
+body * {
+    font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-stretch: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#error-container {
+    position: fixed;
+    width: 30%;
+    top: 5px;
+    right: 0;
+    margin: 0 auto;
+    z-index: 100;
+}
+legend {
+    border: none;
+    padding: 5px;
+    width: auto;
+}
+fieldset {
+    margin: 10px;
+    padding: 10px;
+    border: 2px groove threedface;
+}
+.padded {
+    padding: 5px 0;
+}

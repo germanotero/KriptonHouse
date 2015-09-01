@@ -1,0 +1,37 @@
+<div id="error-container">
+	<alert class="alert alert-{{alert.type}}" type="{{alert.type}}" close="closeAlert()">{{alert.msg}}</alert>
+</div>
+<div class="jumbotron">
+	<fieldset class="room">
+		<legend>Living Comedor</legend>
+		<div class="row">
+			<div class="col-sm-6" courtain model="livingCourtain"></div>
+			<div class="col-sm-6">
+				<div class="padded" simple-light model="livingLight"></div>
+				<div class="padded" simple-light model="tableLight"></div>
+				<div class="padded" simple-light model="entranceLight"></div>
+				<div class="padded" simple-light model="ambientLight"></div>
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset class="room">
+		<legend>Habitacion Principal</legend>
+		<div class="row">
+			<div class="col-sm-6" courtain model="mrCourtain"></div>
+			<div class="col-sm-6">
+				<div class="padded" simple-light model="mrLight"></div>
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset class="room">
+		<legend>Habitacion Esquina</legend>
+		<div class="row">
+			<div class="col-sm-6" courtain model="srCourtains"></div>
+			<div class="col-sm-6">
+				<div class="padded" simple-light model="srLight"></div>
+			</div>
+		</div>
+	</fieldset>
+	</div>
