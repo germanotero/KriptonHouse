@@ -16,17 +16,15 @@
 	</fieldset>
 
 	<fieldset class="room">
-		<legend>Habitacion Principal</legend>
-		<div class="row">
-			<div class="col-sm-6" courtain model="mrCourtain"></div>
-			<div class="col-sm-6">
-				<div class="padded" simple-light model="mrLight"></div>
-			</div>
+		<legend>Exterior <toggle-switch ng-model="exteriorLights.status"></toggle-switch></legend>
+
+			<div ng-repeat="model in exteriorLights.lights" class="padded" simple-light model="model"></div>
+
 		</div>
 	</fieldset>
 
 	<fieldset class="room">
-		<legend>Habitacion Esquina</legend>
+		<legend>Garage</legend>
 		<div class="row">
 			<div class="col-sm-6" courtain model="srCourtains"></div>
 			<div class="col-sm-6">

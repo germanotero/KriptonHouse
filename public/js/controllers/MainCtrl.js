@@ -48,4 +48,15 @@ app.controller( 'MainController', function ( $scope, socket, $timeout ) {
     $scope.mrLight = new Light( 'Luz', $scope );
     $scope.srLight = new Light( 'Luz', $scope );
 
+    $scope.exteriorLights = new LightGroup('Exterior');
+    $scope.exteriorLights.add(new Light('Patio', $scope));
+    $scope.exteriorLights.add(new Light('Garage', $scope));
+    $scope.$watch('exteriorLights.status', function(newValue) {
+      if (newValue) {
+        $scope.exteriorLights.on();
+      }else {
+        $scope.exteriorLights.off();
+      }
+    });
+
 } );

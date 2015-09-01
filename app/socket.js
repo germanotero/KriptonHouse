@@ -20,7 +20,7 @@ module.exports = function ( httpServer, session ) {
         socket.on( "courtain", function ( data ) {
             console.log( data );
             var message = "message";
-            exec.execFile( '../remote', [ '-m', message ],
+            exec.execFile( './remote', [ '-m', message ],
                 function ( error, stdout, stderr ) {
                     if ( stdout.indexOf( "Got this response" ) > -1 ) {
                         var state = stdout.split( 'Got this response ' )[ 1 ].split( '.' )[ 0 ];
