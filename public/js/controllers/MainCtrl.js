@@ -48,6 +48,7 @@ app.controller( 'MainController', function ( $scope, socket, $timeout ) {
     $scope.mrLight = new Light( 'Luz', $scope );
     $scope.srLight = new Light( 'Luz', $scope );
 
+    // Exterior Lights
     $scope.exteriorLights = new LightGroup('Exterior');
     $scope.exteriorLights.add(new Light('Patio', $scope));
     $scope.exteriorLights.add(new Light('Garage', $scope));

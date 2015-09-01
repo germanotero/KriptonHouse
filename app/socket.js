@@ -19,7 +19,8 @@ module.exports = function ( httpServer, session ) {
 
         socket.on( "courtain", function ( data ) {
             console.log( data );
-            var message = "message";
+
+            var message = data.nodeMessage;
             exec.execFile( './remote', [ '-m', message ],
                 function ( error, stdout, stderr ) {
                     if ( stdout.indexOf( "Got this response" ) > -1 ) {

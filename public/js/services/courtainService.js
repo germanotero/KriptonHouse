@@ -1,4 +1,4 @@
-
+'use strict'
 
 app.
 factory( 'socket', function ( socketFactory ) {
@@ -10,9 +10,18 @@ app.factory( 'CourtainService', [ '$http', 'socket', function ( $http, socket ) 
     var self = this;
 
     self.courtainAction = function ( courtain, action ) {
+      let nodeMessage = 20;
+      //make this if objects!
+      if (action === "UP") {
+        nodeMessage += 1;
+      }
+      if (action === "DOWN") {
+        nodeMessage += 2;
+      }
       socket.emit('courtain', {
           id: courtain.name,
-          action: action
+          action: action,
+          nodeMessage: nodeMessage
       });
     };
 
