@@ -1,6 +1,7 @@
 body * {
     font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     font-stretch: normal;
+    color: #8A895A;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -20,8 +21,49 @@ legend {
 fieldset {
     margin: 10px;
     padding: 10px;
-    border: 2px groove threedface;
+    border: 2px groove #CBCBAB;
 }
 .padded {
     padding: 5px 0;
+}
+.jumbotron {
+    margin-top: 5px;
+}
+.btn-primary {
+    background-color: #AAAA80;
+    border-color: #8A895A;
+}
+.header {
+    background-color: #CBCBAB;
+    height: 80px;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+.btn-primary.active.focus,
+.btn-primary.active:focus,
+.btn-primary.active:hover,
+.btn-primary:hover,
+.btn-primary:active.focus,
+.btn-primary:active:focus,
+.btn-primary:active:hover {
+    background-color: #8A895A;
+}
+.color-primary-0 {
+    color: #CBCBAB
+}
+
+/* Main Primary color */
+
+.color-primary-1 {
+    color: #FFFFF8
+}
+.color-primary-2 {
+    color: #F2F2DD
+}
+.color-primary-3 {
+    color: #AAAA80
+}
+.color-primary-4 {
+    color: #8A895A
 }
