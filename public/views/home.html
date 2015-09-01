@@ -16,20 +16,13 @@
 	</fieldset>
 
 	<fieldset class="room">
-		<legend>Exterior <toggle-switch ng-model="exteriorLights.status"></toggle-switch></legend>
-
-			<div ng-repeat="model in exteriorLights.lights" class="padded" simple-light model="model"></div>
-
-		</div>
-	</fieldset>
-
-	<fieldset class="room">
-		<legend>Garage</legend>
+		<legend>Exterior
+			<toggle-switch disabled="true" ng-model="exteriorLights.status"></toggle-switch>
+		</legend>
 		<div class="row">
-			<div class="col-sm-6" courtain model="srCourtains"></div>
-			<div class="col-sm-6">
-				<div class="padded" simple-light model="srLight"></div>
-			</div>
+			<div class="col-sm-4" ng-repeat="model in exteriorLights.lights" class="padded" simple-light model="model"></div>
 		</div>
-	</fieldset>
-	</div>
+</div>
+</fieldset>
+
+</div>
