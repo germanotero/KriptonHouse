@@ -5,3 +5,5 @@ var Light = function ( name , scope) {
     this.scope = scope;
     this.status = false;
 };
+
+module.exports = Light;

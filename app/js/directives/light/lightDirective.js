@@ -1,5 +1,5 @@
 'use strict';
-
+var app = require( '../../app');
 app.directive( 'simpleLight', function () {
     return {
         templateUrl: 'js/directives/light/light.html',

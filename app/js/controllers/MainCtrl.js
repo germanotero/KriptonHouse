@@ -1,4 +1,11 @@
 'use strict'
+var app = require( '../app' ),
+    $ = require('jquery');
+
+
+var Courtain = require( '../models/courtain' ),
+    Light = require( '../models/light' ),
+    LightGroup = require( '../models/lightGroup' );
 
 app.controller( 'MainController', function ( $scope, socket, $timeout ) {
     $scope.alert = {
@@ -29,7 +36,7 @@ app.controller( 'MainController', function ( $scope, socket, $timeout ) {
     };
 
     $scope.closeAlert = function () {
-          $( ".alert" ).fadeOut();
+        $( ".alert" ).fadeOut();
     };
 
     $scope.$on( 'courtain', function ( event, message ) {
@@ -49,15 +56,16 @@ app.controller( 'MainController', function ( $scope, socket, $timeout ) {
     $scope.srLight = new Light( 'Luz', $scope );
 
     // Exterior Lights
-    $scope.exteriorLights = new LightGroup('Exterior');
-    $scope.exteriorLights.add(new Light('Patio', $scope));
-    $scope.exteriorLights.add(new Light('Garage', $scope));
-    $scope.$watch('exteriorLights.status', function(newValue) {
-      if (newValue) {
-        $scope.exteriorLights.on();
-      }else {
-        $scope.exteriorLights.off();
-      }
-    });
+    $scope.exteriorLights = new LightGroup( 'Exterior' );
+    $scope.exteriorLights.add( new Light( 'Patio', $scope ) );
+    $scope.exteriorLights.add( new Light( 'Garage', $scope ) );
+    $scope.$watch( 'exteriorLights.status', function ( newValue ) {
+        if ( newValue ) {
+            $scope.exteriorLights.on();
+        }
+        else {
+            $scope.exteriorLights.off();
+        }
+    } );
 
 } );

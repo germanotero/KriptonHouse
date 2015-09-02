@@ -21,3 +21,5 @@ LightGroup.prototype.off = function() {
     this.lights[i].status = false;
   }
 }
+
+module.exports = LightGroup;
