@@ -2,7 +2,7 @@
 var app = require( '../app' );
 
 app.factory( 'socket', function ( socketFactory ) {
-    var myIoSocket = io.connect( 'http://localhost:8080/' );
+    var myIoSocket = io.connect();
 
     var mySocket = socketFactory( {
         ioSocket: myIoSocket
