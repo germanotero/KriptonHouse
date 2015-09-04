@@ -61,8 +61,16 @@ io.on( 'connection', function ( socket ) {
 
     socket.on( "courtain", function ( data ) {
         console.log( data );
-
-        var message = data.nodeMessage;
+        var nodeMessage = 20;
+        //make this if objects!
+        if ( data.action === "UP" ) {
+            nodeMessage += 1;
+        }
+        if ( data.action === "DOWN" ) {
+            nodeMessage += 2;
+        }
+        var message = nodeMessage;
+        console.log(message);
         exec.execFile( './remote', [ '-m', message ],
             function ( error, stdout, stderr ) {
                 if ( stdout.indexOf( "Got this response" ) > -1 ) {
