@@ -70,31 +70,36 @@ io.on( 'connection', function ( socket ) {
             nodeMessage += 2;
         }
         var message = nodeMessage;
-        console.log(message);
-        exec.execFile( './remote', [ '-m', message ],
-            function ( error, stdout, stderr ) {
-                if ( stdout.indexOf( "Got this response" ) > -1 ) {
-                    var state = stdout.split( 'Got this response ' )[ 1 ].split( '.' )[ 0 ];
-                    socket.emit(
-                        "alert", {
-                            type: 'success',
-                            msg: "Success",
-                            operation: message,
-                            state: state
-                        } );
-                }
-
-                if ( error !== null ) {
-                    console.log( 'exec error: ' + error );
-
-                    socket.emit(
-                        "alert", {
-                            type: 'danger',
-                            msg: 'Error while executing call to the nodes.'
-                        } );
-
-                }
+        console.log( message );
+        socket.emit(
+            "alert", {
+                type: 'warning',
+                msg: 'Demo mode, the message would be: ' + message + '.'
             } );
+        // exec.execFile( './remote', [ '-m', message ],
+        //     function ( error, stdout, stderr ) {
+        //         if ( stdout.indexOf( "Got this response" ) > -1 ) {
+        //             var state = stdout.split( 'Got this response ' )[ 1 ].split( '.' )[ 0 ];
+        //             socket.emit(
+        //                 "alert", {
+        //                     type: 'success',
+        //                     msg: "Success",
+        //                     operation: message,
+        //                     state: state
+        //                 } );
+        //         }
+        //
+        //         if ( error !== null ) {
+        //             console.log( 'exec error: ' + error );
+        //
+        //             socket.emit(
+        //                 "alert", {
+        //                     type: 'danger',
+        //                     msg: 'Error while executing call to the nodes.'
+        //                 } );
+        //
+        //         }
+        //     } );
     } )
 } );
 
