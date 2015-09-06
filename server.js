@@ -74,32 +74,32 @@ io.on( 'connection', function ( socket ) {
         socket.emit(
             "alert", {
                 type: 'warning',
-                msg: 'Demo mode, the message would be: ' + message + '.'
+                msg: 'Executing Action: ' + message + '.'
             } );
-        // exec.execFile( './remote', [ '-m', message ],
-        //     function ( error, stdout, stderr ) {
-        //         if ( stdout.indexOf( "Got this response" ) > -1 ) {
-        //             var state = stdout.split( 'Got this response ' )[ 1 ].split( '.' )[ 0 ];
-        //             socket.emit(
-        //                 "alert", {
-        //                     type: 'success',
-        //                     msg: "Success",
-        //                     operation: message,
-        //                     state: state
-        //                 } );
-        //         }
-        //
-        //         if ( error !== null ) {
-        //             console.log( 'exec error: ' + error );
-        //
-        //             socket.emit(
-        //                 "alert", {
-        //                     type: 'danger',
-        //                     msg: 'Error while executing call to the nodes.'
-        //                 } );
-        //
-        //         }
-        //     } );
+        exec.execFile( './remote', [ '-m', message ],
+            function ( error, stdout, stderr ) {
+                if ( stdout.indexOf( "Got this response" ) > -1 ) {
+                    var state = stdout.split( 'Got this response ' )[ 1 ].split( '.' )[ 0 ];
+                    socket.emit(
+                        "alert", {
+                            type: 'success',
+                            msg: "Success",
+                            operation: message,
+                            state: state
+                        } );
+                }
+
+                if ( error !== null ) {
+                    console.log( 'exec error: ' + error );
+
+                    socket.emit(
+                        "alert", {
+                            type: 'danger',
+                            msg: 'Error while executing call to the nodes.'
+                        } );
+
+                }
+            } );
     } )
 } );
 
