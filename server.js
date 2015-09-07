@@ -63,10 +63,10 @@ io.on( 'connection', function ( socket ) {
         console.log( data );
         var nodeMessage = 20;
         //make this if objects!
-        if ( data.action === "UP" ) {
+        if ( data.action === "DOWN" ) {
             nodeMessage += 1;
         }
-        if ( data.action === "DOWN" ) {
+        if ( data.action === "UP" ) {
             nodeMessage += 2;
         }
         var message = nodeMessage;
