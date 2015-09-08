@@ -57,15 +57,6 @@ gulp.task( 'lint', function () {
         .pipe( eslint.format() );
 } );
 
-// gulp.task( 'unit', function () {
-//     return gulp.src( [
-//             'test/unit/**/*.js'
-//         ] )
-//         .pipe( mocha( {
-//             reporter: 'dot'
-//         } ) );
-// } );
-
 gulp.task( 'browserify', /*['lint', 'unit'],*/ function () {
     return browserify( './app/js/app.js' )
         .bundle( {
@@ -94,33 +85,6 @@ gulp.task( 'browserify-min', [ 'ngmin' ], function () {
         } ) ) )
         .pipe( gulp.dest( './app/dist/' ) );
 } );
-
-// gulp.task( 'browserify-tests', function () {
-//     var bundler = browserify();
-//     glob.sync( './test/unit/**/*.js' )
-//         .forEach( function ( file ) {
-//             bundler.add( file );
-//         } );
-//     return bundler
-//         .bundle( {
-//             debug: true
-//         } )
-//         .pipe( source( 'browserified_tests.js' ) )
-//         .pipe( gulp.dest( './test/browserified' ) );
-// } );
-
-// gulp.task( 'karma', [ 'browserify-tests' ], function () {
-//     return gulp
-//         .src( './test/browserified/browserified_tests.js' )
-//         .pipe( karma( {
-//             configFile: 'karma.conf.js.travis',
-//             action: 'run'
-//         } ) )
-//         .on( 'error', function ( err ) {
-//             // Make sure failed tests cause gulp to exit non-zero
-//             throw err;
-//         } );
-// } );
 
 gulp.task( 'server', [ 'browserify' ], function () {
     connect.server( {
